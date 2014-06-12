@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "bootstrapping library for osx & ubuntu",
   "global": "true",
-  "install": "./install.sh",
+  "install": "sh install.sh",
   "scripts": [ "dots.sh" ]
 }
 
