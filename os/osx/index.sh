@@ -4,19 +4,21 @@ set -e
 
 # modules
 source "$lib/symlink/index.sh"
-
-# paths
-osx="$os/osx"
+source "$lib/is-osx/index.sh"
 
 # Only run if on a Mac
-if [ "$(uname -s)" != "Darwin" ]; then
+if [ 0 -eq `osx` ]; then
   exit 0
 fi
 
+# exit 1
+# paths
+osx="$os/osx"
+
 # Run each program
-# sh "$osx/binaries.sh"
+sh "$osx/binaries.sh"
 sh "$osx/defaults.sh"
-# sh "$dirname/apps.sh"
+sh "$dirname/apps.sh"
 
 # Symlink the profile
 if [[ ! -e "$HOME/.bash_profile" ]]; then
