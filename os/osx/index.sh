@@ -19,8 +19,8 @@ sh "$osx/defaults.sh"
 # sh "$dirname/apps.sh"
 
 # Symlink the profile
-if [[ ! -e "$HOME/jazz_profile" ]]; then
-  symlink "$osx/profile.sh" "$HOME/jazz_profile"
+if [[ ! -e "$HOME/.bash_profile" ]]; then
+  symlink "$osx/profile.sh" "$HOME/.bash_profile"
 else
-  echo "$HOME/jazz_profile already exists. remove and run again."
+  echo "$HOME/.bash_profile already exists. remove and run again."
 fi
