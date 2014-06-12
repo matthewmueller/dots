@@ -55,7 +55,7 @@ The OSX build does the following:
 
 # Credits
 
-* Logo by: 
+* Logo by: [Piotrek Chuchla](http://www.thenounproject.com/pchuchla/)
 
 # License
 
