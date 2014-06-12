@@ -1,5 +1,7 @@
 # dots
 
+![image](https://i.cloudup.com/RCpB-ASfme.png)
+
 WIP bootstrapping library for osx & ubuntu (and maybe others!)
 
 ## Installation
@@ -50,6 +52,10 @@ The OSX build does the following:
 * ubuntu profile
 * logging
 * much more...
+
+# Credits
+
+* Logo by: 
 
 # License
 
