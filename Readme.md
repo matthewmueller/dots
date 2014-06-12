@@ -7,7 +7,7 @@ WIP bootstrapping library for osx & ubuntu (and maybe others!)
 One-liner:
 
 ```
-
+(cd /tmp && git clone --depth 1 https://github.com/matthewmueller/dots.git && cd dots && sh ./install.sh)
 ```
 
 ## Design
