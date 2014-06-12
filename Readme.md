@@ -34,7 +34,7 @@ The OSX build does the following:
 
 ### Ubuntu (server)
 
-The OSX build does the following:
+The Ubuntu build does the following:
 
 - dash => bash
 - creates a user
