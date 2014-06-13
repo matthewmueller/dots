@@ -12,7 +12,8 @@ if [ 0 -eq `ubuntu` ]; then
 fi
 
 # Update ubuntu
-apt-get update
+sudo aptitude    update
+sudo aptitude -y upgrade
 
 # Create a user
 while true; do
@@ -61,7 +62,13 @@ curl -L "https://gist.github.com/MatthewMueller/38b8dac7b6b35e946822/raw/63b23dd
 chmod +x /etc/network/if-pre-up.d/firewall
 
 # Install docker.io
-sudo apt-get update
-sudo apt-get install docker.io
-sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
-sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
+sudo aptitude install linux-image-extra-`uname -r`
+sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
+sudo sh -c "echo deb http://get.docker.io/ubuntu docker main\
+> /etc/apt/sources.list.d/docker.list"
+sudo aptitude    update
+sudo aptitude install lxc-docker
+
+# Switch to user
+su $user
+cd ~
