@@ -57,14 +57,6 @@ apt-get install -y fail2ban
 curl -L "https://gist.github.com/MatthewMueller/38b8dac7b6b35e946822/raw/0c6e859ed2ae3cbb2bc87073b96db4954aa74dda/fail2ban.local" > /etc/fail2ban/jail.local
 service fail2ban restart
 
-# Setup firewall (needs a newline, because gist cuts them off)
-curl -L -w "\n" "https://gist.github.com/MatthewMueller/38b8dac7b6b35e946822/raw/50f1db72eb2f2278839758c0f54c95d4d4cd5f2d/firewall.rules" > /etc/iptables.firewall.rules
-iptables-restore < /etc/iptables.firewall.rules
-
-# Reload the firewall on startup
-curl -L "https://gist.github.com/MatthewMueller/38b8dac7b6b35e946822/raw/63b23dd10ff0d163a5aed17bcce9d917284e8541/firewall" > /etc/network/if-pre-up.d/firewall
-chmod +x /etc/network/if-pre-up.d/firewall
-
 # Install docker.io
 sudo aptitude install lxc-docker
 
