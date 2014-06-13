@@ -69,5 +69,5 @@ chmod +x /etc/network/if-pre-up.d/firewall
 sudo aptitude install lxc-docker
 
 # Switch to user
+cd $home
 su $user
-cd ~
