@@ -1,11 +1,17 @@
 
 # paths
 dirname=$(dirname "$(readlink -f "$0")")
-lib="/usr/local/lib/"
-bin="/usr/local/bin/"
+lib="/usr/local/lib"
+bin="/usr/local/bin"
 
 # Copy the path
-cp -R $dirname $lib
+sudo cp -R $dirname "$lib/"
 
 # symlink dots
-ln -s "$dirname/dots.sh" "$bin/dots"
+rm "$bin/dots"
+ln -s "$lib/dots/dots.sh" "$bin/dots"
+
+# Ubuntu-only: Change from dash to bash
+if [ "$BASH_VERSION" = '' ]; then
+  sudo echo "dash    dash/sh boolean false" | debconf-set-selections ; dpkg-reconfigure --frontend=noninteractive dash
+fi

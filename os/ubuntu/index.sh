@@ -11,10 +11,6 @@ if [ 0 -eq `ubuntu` ]; then
   exit 0
 fi
 
-
-# Change default shell to bash (from dash)
-sudo echo "dash    dash/sh boolean false" | debconf-set-selections ; dpkg-reconfigure --frontend=noninteractive dash
-
 # Update ubuntu
 apt-get update
 

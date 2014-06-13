@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version="0.0.1"
+version="0.0.2"
 
 # paths
 export dirname=$(dirname "$(readlink -f "$0")")
@@ -22,7 +22,7 @@ usage() {
 
     reload                  Reload the dotfiles
     boot <os>               Bootstrap the given operating system
-    update                  Update dots
+    update <os|dots>        Update the os or dots
 
 EOF
 }
@@ -41,22 +41,19 @@ boot() {
 update() {
   if [[ -e "$os/$1/index.sh" ]]; then
     sh "$os/$1/update.sh"
-  elif [[ "$1" == "dots" ]]; then
-    updatedots
   else
-    echo "update: could not find \"$1\""
-    exit 1
+    updatedots
   fi
 }
 
 # update dots(1) via git clone
 updatedots() {
-  cd /tmp \
-    && echo "... updating" \
-    && git clone --depth 1 git://github.com/matthewmueller/dots.git \
-    && cd dots \
-    && make install \
-    && echo "... updated to $(dots --version)"
+  echo "updating dots..."
+  mkdir -p /tmp/dots \
+    && cd /tmp/dots \
+    && curl -L# https://github.com/matthewmueller/dots/archive/master.tar.gz | tar zx --strip 1 \
+    && ./install.sh \
+    && echo "updated dots to $(dots --version)."
   exit
 }
 
