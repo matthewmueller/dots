@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version="0.0.5"
+version="0.0.6"
 
 # paths
 export dirname=$(dirname "$(readlink -f "$0")")
