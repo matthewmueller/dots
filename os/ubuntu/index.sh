@@ -23,10 +23,10 @@ sudo aptitude -y upgrade
 while true; do
   read -p "Create a new username (username, no)? " user
   case $user in
-    "" | "y" | "yes" ) 
+    "" | "y" | "yes" )
       echo "please enter a new username"
       ;;
-    "n" | "no" ) 
+    "n" | "no" )
       echo "no username created"
       user="root"
       home="/root"
@@ -56,6 +56,18 @@ chmod 600 $home/.ssh/authorized_keys
 apt-get install -y fail2ban
 curl -L "https://gist.github.com/MatthewMueller/38b8dac7b6b35e946822/raw/0c6e859ed2ae3cbb2bc87073b96db4954aa74dda/fail2ban.local" > /etc/fail2ban/jail.local
 service fail2ban restart
+
+# Secure SSH and remove root access
+sudo sed -i.bak \
+  -e 's/^#PermitRootLogin yes/PermitRootLogin no/' \
+  -e 's/PermitRootLogin yes/PermitRootLogin no/' \
+  -e 's/^#PermitEmptyPasswords yes/PermitEmptyPasswords no/' \
+  -e 's/PermitEmptyPasswords yes/PermitEmptyPasswords no/' \
+  -e 's/^#PasswordAuthentication yes/PasswordAuthentication no/' \
+  -e 's/PasswordAuthentication yes/PasswordAuthentication no/' \
+  -e 's/^#X11Forwarding yes/X11Forwarding no/' \
+  -e 's/X11Forwarding yes/X11Forwarding no/' \
+  /etc/ssh/sshd_config
 
 # Install docker.io
 sudo aptitude install lxc-docker
