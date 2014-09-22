@@ -1,9 +1,10 @@
 {
   "name": "dots",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "bootstrapping library for osx & ubuntu",
   "global": "true",
   "install": "sh install.sh",
-  "scripts": [ "dots.sh" ]
+  "scripts": [
+    "dots.sh"
+  ]
 }
-
