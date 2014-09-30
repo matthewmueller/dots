@@ -180,5 +180,13 @@ function ol() {
   open "http://localhost:${1:-3000}"
 }
 
+if [[ `node -v` =~ ^v0.11 ]]; then
+  alias node="node --harmony-generators"
+  alias node-dev="node-dev --harmony-generators"
+  alias mocha="mocha --harmony-generators"
+fi
+
+alias wm="watch -q make &"
+
 # Update the number of open files
 ulimit -n 1000
