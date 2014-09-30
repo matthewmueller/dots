@@ -7,44 +7,10 @@
 # Some things taken from here
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
-# Set the colours you can use
-black='\033[0;30m'
-white='\033[0;37m'
-red='\033[0;31m'
-green='\033[0;32m'
-yellow='\033[0;33m'
-blue='\033[0;34m'
-magenta='\033[0;35m'
-cyan='\033[0;36m'
-
-
-#  Reset text attributes to normal + without clearing screen.
-alias Reset="tput sgr0"
-
-# Color-echo.
-# arg $1 = message
-# arg $2 = Color
-cecho() {
-  echo "${2}${1}"
-  Reset # Reset to normal.
-  return
-}
-
 # Ask for the administrator password upfront
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-echo ""
-cecho "##############################################" $white
-cecho "#  This script will make your ï£¿ Mac awesome." $white
-cecho "#   Follow the prompts and you'll be fine." $white
-cecho "#" $white
-cecho "#            ~ Happy Hacking ~" $white
-cecho "#############################################" $white
-echo ""
-
+echo "This script will make your Mac awesome"
 
 ###############################################################################
 # General UI/UX
@@ -376,20 +342,4 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 # Kill affected applications
 ###############################################################################
 
-echo ""
-cecho "Done!" $white
-echo ""
-echo ""
-cecho "###############################################################################" $white
-echo ""
-echo ""
-cecho "Note that some of these changes require a logout/restart to take effect." $white
-cecho "Killing some open applications in order to take effect." $white
-echo ""
-
-find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-  "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-  "Terminal" "Transmission"; do
-  killall "${app}" > /dev/null 2>&1
-done
+echo "Done!"

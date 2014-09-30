@@ -4,6 +4,9 @@ export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH
 ## Put brew's ruby in front
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
+## Use gnu tools instead
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
 ## Modify NODE_PATH
 export NODE_PATH=lib
 
@@ -18,11 +21,6 @@ fi
 # Add bash completion (for git and others)
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
-fi
-
-## Use gnu-ls instead
-if [ "$(uname -s)" = "Darwin" ]; then
-  alias ls="/usr/local/bin/gls --color=auto -hF"
 fi
 
 ## Start an HTTP server from a directory, optionally specifying the port
@@ -82,16 +80,16 @@ git_progress() {
 }
 
 # colors
-color_bold="$(tput bold)"
-color_reset="$(tput sgr0)"
-color_red="$(tput setaf 1)"
-color_green="$(tput setaf 2)"
-color_yellow="$(tput setaf 3)"
-color_blue="$(tput setaf 4)"
-color_purple="$(tput setaf 5)"
-color_teal="$(tput setaf 6)"
-color_white="$(tput setaf 7)"
-color_black="$(tput setaf 8)"
+color_bold="\[$(tput bold)\]"
+color_reset="\[$(tput sgr0)\]"
+color_red="\[$(tput setaf 1)\]"
+color_green="\[$(tput setaf 2)\]"
+color_yellow="\[$(tput setaf 3)\]"
+color_blue="\[$(tput setaf 4)\]"
+color_purple="\[$(tput setaf 5)\]"
+color_teal="\[$(tput setaf 6)\]"
+color_white="\[$(tput setaf 7)\]"
+color_black="\[$(tput setaf 8)\]"
 
 # Add git to the terminal prompt
 git_prompt() {
@@ -128,6 +126,9 @@ function hax0r() {
 
 ## Add hub
 eval "$(hub alias -s)"
+
+## Color ls
+alias ls='ls --color=auto -hF'
 
 ## Display as a list, sorting by time modified
 alias ll='ls -1t'

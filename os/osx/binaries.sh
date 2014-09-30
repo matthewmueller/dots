@@ -1,6 +1,6 @@
-# 
+#
 # Binary installer
-# 
+#
 
 # Check for Homebrew
 if test ! $(which brew); then
@@ -13,7 +13,6 @@ brew update && brew upgrade brew-cask
 
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
-echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
@@ -33,8 +32,8 @@ brew install zopfli
 brew install ffmpeg
 brew install python
 brew install sshfs
+brew install trash
 brew install tree
-brew install zsh
 brew install ack
 brew install git
 brew install hub
