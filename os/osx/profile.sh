@@ -86,16 +86,16 @@ git_progress() {
 }
 
 # colors
-color_bold="\[$(tput bold)\]"
-color_reset="\[$(tput sgr0)\]"
-color_red="\[$(tput setaf 1)\]"
-color_green="\[$(tput setaf 2)\]"
-color_yellow="\[$(tput setaf 3)\]"
-color_blue="\[$(tput setaf 4)\]"
-color_purple="\[$(tput setaf 5)\]"
-color_teal="\[$(tput setaf 6)\]"
-color_white="\[$(tput setaf 7)\]"
-color_black="\[$(tput setaf 8)\]"
+color_bold="$(tput bold)"
+color_reset="$(tput sgr0)"
+color_red="$(tput setaf 1)"
+color_green="$(tput setaf 2)"
+color_yellow="$(tput setaf 3)"
+color_blue="$(tput setaf 4)"
+color_purple="$(tput setaf 5)"
+color_teal="$(tput setaf 6)"
+color_white="$(tput setaf 7)"
+color_black="$(tput setaf 8)"
 
 # Add git to the terminal prompt
 git_prompt() {
