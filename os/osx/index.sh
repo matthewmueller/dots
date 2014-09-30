@@ -18,7 +18,7 @@ osx="$os/osx"
 # Run each program
 sh "$osx/binaries.sh"
 sh "$osx/defaults.sh"
-sh "$dirname/apps.sh"
+sh "$osx/apps.sh"
 
 # Symlink the profile
 if [[ ! -e "$HOME/.bash_profile" ]]; then

@@ -1,11 +1,49 @@
 #!/usr/bin/env bash
 
-version="0.0.6"
+version="0.0.7"
 
-# paths
-export dirname=$(dirname "$(readlink -f "$0")")
-export lib="$dirname/lib"
-export os="$dirname/os"
+# dots(1) main
+main() {
+
+  # paths
+  export dirname=$(dirname $(realpath $0))
+  export lib="$dirname/lib"
+  export os="$dirname/os"
+
+  # parse options
+  while [[ "$1" =~ ^- ]]; do
+    case $1 in
+      -v | --version )
+        echo $version
+        exit
+        ;;
+      -h | --help )
+        usage
+        exit
+        ;;
+    esac
+    shift
+  done
+
+  # run command
+  case $1 in
+    reload )
+      source "$HOME/.bash_profile"
+      ;;
+    boot )
+      boot $2
+      exit
+      ;;
+    update )
+      update $2
+      exit
+      ;;
+    *)
+      usage
+      exit
+      ;;
+  esac
+}
 
 # usage info
 usage() {
@@ -57,37 +95,23 @@ updatedots() {
   exit
 }
 
-# parse options
-while [[ "$1" =~ ^- ]]; do
-  case $1 in
-    -v | --version )
-      echo $version
-      exit
-      ;;
-    -h | --help )
-      usage
-      exit
-      ;;
-  esac
-  shift
-done
+# "readlink -f" shim for mac os x
+realpath() {
+  target=$1
+  cd `dirname $target`
+  target=`basename $target`
 
-# run command
-case $1 in
-  reload )
-    source "$HOME/.bash_profile"
-    ;;
-  boot )
-    boot $2
-    exit
-    ;;
-  update )
-    update $2
-    exit
-    ;;
-  *)
-    usage
-    exit
-    ;;
-esac
+  # Iterate down a (possible) chain of symlinks
+  while [ -L "$target" ]
+  do
+      target=`readlink $target`
+      cd `dirname $target`
+      target=`basename $target`
+  done
 
+  dir=`pwd -P`
+  echo $dir/$target
+}
+
+# Call main
+main "$@"

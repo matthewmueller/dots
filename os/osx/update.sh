@@ -11,8 +11,5 @@ fi
 brew update
 brew upgrade
 
-# upgrade brew cask packages
-brew cask upgrade
-
 # cleanup
 brew cleanup

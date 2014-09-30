@@ -5,7 +5,7 @@
 # Check for Homebrew
 if test ! $(which brew); then
   echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Update homebrew
@@ -28,7 +28,6 @@ brew install homebrew/dupes/grep
 # Install other useful binaries
 brew install graphicsmagick
 brew install webkit2png
-brew install mackup
 brew install rename
 brew install zopfli
 brew install ffmpeg
