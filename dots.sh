@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 version="0.0.7"
 
 # dots(1) main
