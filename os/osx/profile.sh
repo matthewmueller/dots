@@ -31,10 +31,6 @@ function server() {
     open "http://localhost:${port}/" && python -m SimpleHTTPServer "$port"
 }
 
-is_git() {
-  git rev-parse 2> /dev/null
-}
-
 git_branch() {
   # On branches, this will return the branch name
   # On non-branches, (no branch)
