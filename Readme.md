@@ -32,7 +32,7 @@ The OSX build does the following:
 - installs applications via `homebrew-cask` (one-password, sublime-text, virtualbox, nv-alt, iterm2, etc.)
 - sets up the ~/.bash_profile 
 
-### Ubuntu (server)
+### Ubuntu (server) (ALPHA)
 
 The Ubuntu build does the following:
 
