@@ -25,18 +25,24 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
 # Install other useful binaries
-brew install graphicsmagick
-brew install webkit2png
-brew install rename
-brew install zopfli
-brew install ffmpeg
-brew install python
-brew install sshfs
-brew install trash
-brew install tree
-brew install ack
-brew install git
-brew install hub
+binaries=(
+  graphicsmagick
+  webkit2png
+  rename
+  zopfli
+  ffmpeg
+  python
+  mongo
+  sshfs
+  trash
+  tree
+  ack
+  git
+  hub
+)
+
+# Install the binaries
+brew install ${binaries[@]}
 
 # Add osx specific command line tools
 if test ! $(which subl); then
