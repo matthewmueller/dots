@@ -40,6 +40,7 @@ apps=(
   quicklook-json
   skype
   transmission
+  apikitchen
 )
 
 # fonts
