@@ -41,6 +41,7 @@ apps=(
   skype
   transmission
   apikitchen
+  mamp
 )
 
 # fonts
