@@ -10,6 +10,10 @@ export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 ## Modify NODE_PATH
 export NODE_PATH=lib
 
+# Set the Android Home
+# use: brew install android-sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
 # Use sublime for Ctrl+x+e
 EDITOR="subl -w"
 
@@ -153,7 +157,7 @@ alias gco="git checkout"
 alias gba="git branch -a"
 alias gcp="git cherry-pick"
 alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
-alias gpom="git pull origin master"
+alias gpom="git pull --rebase origin master"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 
 ## Get the process on a given port
