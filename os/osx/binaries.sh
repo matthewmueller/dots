@@ -28,6 +28,7 @@ brew install homebrew/dupes/grep
 binaries=(
   graphicsmagick
   webkit2png
+  phantomjs
   rename
   zopfli
   ffmpeg
