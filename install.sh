@@ -1,6 +1,6 @@
 
 # paths
-dirname=$(dirname $0)
+dirname=$(pwd)
 lib="/usr/local/lib"
 bin="/usr/local/bin"
 
