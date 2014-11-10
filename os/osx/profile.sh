@@ -8,7 +8,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 ## Modify NODE_PATH
-export NODE_PATH=lib
+# export NODE_PATH=lib
 
 # Set the Android Home
 # use: brew install android-sdk
