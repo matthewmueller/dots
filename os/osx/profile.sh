@@ -14,8 +14,12 @@ export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 # use: brew install android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
-# Use sublime for Ctrl+x+e
-EDITOR="subl -w"
+# Use atom for Ctrl+x+e
+EDITOR="atom"
+
+# function subl() {
+#   atom "$@"
+# }
 
 # Default cd path for interactive shells
 if test “${PS1+set}”; then
@@ -167,16 +171,13 @@ function port() {
 
 ## subl
 alias s="subl -a"
-
-## mongroup
-alias mg=mongroup
+alias subl=atom
 
 ## gopen - open to own github
 
 function gopen() {
   open "https://github.com/matthewmueller/${1}";
 }
-
 
 ## Open localhost
 

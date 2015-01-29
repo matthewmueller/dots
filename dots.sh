@@ -37,6 +37,10 @@ main() {
       update $2
       exit
       ;;
+    open )
+      open
+      exit
+      ;;
     *)
       usage
       exit
@@ -60,6 +64,7 @@ usage() {
     reload                  Reload the dotfiles
     boot <os>               Bootstrap the given operating system
     update <os|dots>        Update the os or dots
+    open                    Open dots for development
 
 EOF
 }
@@ -110,6 +115,12 @@ realpath() {
 
   dir=`pwd -P`
   echo $dir/$target
+}
+
+# open dots(1)
+# TODO use default editor
+open() {
+  atom $dirname
 }
 
 # Call main
