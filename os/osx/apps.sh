@@ -35,7 +35,6 @@ apps=(
   tower
   vlc
   cloudup
-  font-m-plus
   nvalt
   quicklook-json
   skype
