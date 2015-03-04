@@ -6,6 +6,7 @@ set -e
 
 # Apps
 apps=(
+  1password
   alfred
   dropbox
   google-chrome
