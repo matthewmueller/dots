@@ -201,3 +201,8 @@ alias wm="watch -q make &"
 
 # Update the number of open files
 ulimit -n 1000
+
+# Load ~/.bash_profile.local if it exists
+if [[ -e $HOME/.bash_profile.local ]]; then
+  source $HOME/.bash_profile.local
+fi
