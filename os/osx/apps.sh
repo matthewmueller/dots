@@ -6,6 +6,7 @@ set -e
 
 # Apps
 apps=(
+  shimo
   1password
   alfred
   dropbox
