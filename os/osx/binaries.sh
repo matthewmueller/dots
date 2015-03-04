@@ -36,7 +36,9 @@ binaries=(
   mongo
   sshfs
   trash
+  node
   tree
+  hub
   ack
   git
   hub
