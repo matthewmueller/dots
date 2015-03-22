@@ -14,6 +14,9 @@ export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 # use: brew install android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+# JAVA HOME
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+
 # Use atom for Ctrl+x+e
 EDITOR="atom"
 
@@ -191,12 +194,6 @@ function gopen() {
 function ol() {
   open "http://localhost:${1:-3000}"
 }
-
-if [[ `node -v` =~ ^v0.11 ]]; then
-  alias node="node --harmony-generators"
-  alias node-dev="node-dev --harmony-generators"
-  alias mocha="mocha --harmony-generators"
-fi
 
 alias wm="watch -q make &"
 
