@@ -162,6 +162,7 @@ alias gba="git branch -a"
 alias gcp="git cherry-pick"
 alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 alias gpom="git pull --rebase origin master"
+alias gpum="git pull --rebase upstream master"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 
 # Run `dig` & display the most useful info
