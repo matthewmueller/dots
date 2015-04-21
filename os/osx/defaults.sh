@@ -83,7 +83,7 @@ echo "Check for software updates daily, not just once per week"
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 echo ""
-echo "Disable smart quotes and smart dashes as theyâ€™re annoying when typing code"
+echo "Disable smart quotes and smart dashes as they're annoying when typing code"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
@@ -192,7 +192,7 @@ echo "Enabling snap-to-grid for icons on the desktop and in other icon views"
 ###############################################################################
 
 # Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you donâ€™t use
+# This is only really useful when setting up a new Mac, or if you don't use
 # the Dock to launch apps.
 #defaults write com.apple.dock persistent-apps -array
 
@@ -217,27 +217,27 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 ###############################################################################
 
 echo ""
-echo "Hiding Safariâ€™s bookmarks bar by default"
+echo "Hiding Safari's bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 
 echo ""
-echo "Hiding Safariâ€™s sidebar in Top Sites"
+echo "Hiding Safari's sidebar in Top Sites"
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 echo ""
-echo "Disabling Safariâ€™s thumbnail cache for History and Top Sites"
+echo "Disabling Safari's thumbnail cache for History and Top Sites"
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 echo ""
-echo "Enabling Safariâ€™s debug menu"
+echo "Enabling Safari's debug menu"
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 echo ""
-echo "Making Safariâ€™s search banners default to Contains instead of Starts With"
+echo "Making Safari's search banners default to Contains instead of Starts With"
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 echo ""
-echo "Removing useless icons from Safariâ€™s bookmarks bar"
+echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 echo ""
@@ -297,7 +297,7 @@ echo "Disable automatic emoji substitution (i.e. use plain text smileys)"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 echo ""
-echo "Disable smart quotes as itâ€™s annoying for messages that contain code"
+echo "Disable smart quotes as it's annoying for messages that contain code"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 echo ""
@@ -317,11 +317,11 @@ echo "Remove the sleep image file to save disk space"
 sudo rm /Private/var/vm/sleepimage
 echo "Creating a zero-byte file insteadâ€¦"
 sudo touch /Private/var/vm/sleepimage
-echo "â€¦and make sure it canâ€™t be rewritten"
+echo "â€¦and make sure it can't be rewritten"
 sudo chflags uchg /Private/var/vm/sleepimage
 
 echo ""
-echo "Disable the sudden motion sensor as itâ€™s not useful for SSDs"
+echo "Disable the sudden motion sensor as it's not useful for SSDs"
 sudo pmset -a sms 0
 
 echo ""
