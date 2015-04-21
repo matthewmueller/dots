@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -eu
+
 #
 # Binary installer
 #
