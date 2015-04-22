@@ -1,8 +1,9 @@
+#!/usr/bin/env bash
+set -eu
+
 # OSX for Hackers (Mavericks/Yosemite)
 #
 # Source: https://gist.github.com/brandonb927/3195465
-
-#!/bin/sh
 
 # Some things taken from here
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx

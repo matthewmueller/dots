@@ -1,5 +1,5 @@
-# kill on error
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # Check for Homebrew
 if test ! $(which brew); then

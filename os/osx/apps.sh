@@ -1,8 +1,9 @@
+#!/usr/bin/env bash
+set -eu
+
 #
 # Application installer (via brew-cask)
 #
-
-set -e
 
 # Apps
 apps=(

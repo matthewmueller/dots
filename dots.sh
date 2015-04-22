@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eu
 version="0.0.7"
 
 # dots(1) main
