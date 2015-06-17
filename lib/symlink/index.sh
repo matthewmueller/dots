@@ -18,7 +18,7 @@ EOF
 }
 
 # Symlink
-# 
+#
 # Usage: symlink /path/to/file /path/to/symlink
 
 function symlink {
@@ -33,10 +33,10 @@ function symlink {
         ;;
     esac
     shift
-  done  
+  done
 
   if [[ -e $1 ]] && [[ -n $2 ]]; then
-    ln -s $1 $2
+    ln -s $1 $2boot
   else
     usage
   fi

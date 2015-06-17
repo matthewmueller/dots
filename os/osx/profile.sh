@@ -7,6 +7,9 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 ## Use gnu tools instead
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
+## Add the $GOPATH/bin to path
+export PATH=$HOME/Go/bin:$PATH
+
 ## Modify NODE_PATH
 # export NODE_PATH=lib
 
@@ -17,8 +20,16 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 # JAVA HOME
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
+# boot2docker goods
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/matt/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+# $GOPATH
+export GOPATH=$HOME/Go
+
 # Use atom for Ctrl+x+e
-EDITOR="atom"
+EDITOR="subl"
 
 # function subl() {
 #   atom "$@"
@@ -101,6 +112,7 @@ color_purple="\[$(tput setaf 5)\]"
 color_teal="\[$(tput setaf 6)\]"
 color_white="\[$(tput setaf 7)\]"
 color_black="\[$(tput setaf 8)\]"
+bg_yellow="\[$(tput setab 3)\]"
 
 # Add git to the terminal prompt
 git_prompt() {
@@ -121,7 +133,7 @@ git_prompt() {
 
 ## Customize the terminal input line
 prompt() {
-  PS1="  ☁  $color_blue\W$color_reset $(git_prompt): "
+  PS1="$bg_yellow $color_reset ☁  $color_blue\W$color_reset $(git_prompt): "
 }
 
 PROMPT_COMMAND=prompt
@@ -154,7 +166,7 @@ alias gbd="git branch -D"
 alias gs="git status"
 alias gc="git commit -m"
 alias gca="git commit -a -m"
-alias gm="git merge --no-ff"
+alias gm="git merge --ff"
 alias gpt="git push --tags"
 alias gp="git push"
 alias grh="git reset --hard"
@@ -180,8 +192,6 @@ function port() {
 }
 
 ## subl
-alias s="subl -a"
-alias subl=atom
 
 ## gopen - open to own github
 
